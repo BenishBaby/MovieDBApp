@@ -15,6 +15,7 @@ import com.bumptech.glide.Glide;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import movies.com.androidmovieapp.Model.Belongs_to_collection;
 import movies.com.androidmovieapp.Model.CollectionDetails;
 import movies.com.androidmovieapp.Model.Genres;
 import movies.com.androidmovieapp.Model.MovieDetails;
@@ -109,7 +110,10 @@ public class MovieDetailActivity extends AppCompatActivity implements MovieDetai
             genreTypes = genres.getName() + "/";
         }
         genreView.setText(genreTypes);
-        presenter.loadMovieCollection("10");
+        Belongs_to_collection belongs_to_collection = movieDetails.getBelongs_to_collection();
+        if( belongs_to_collection != null) {
+            presenter.loadMovieCollection(belongs_to_collection.getId());
+        }
     }
 
     @Override

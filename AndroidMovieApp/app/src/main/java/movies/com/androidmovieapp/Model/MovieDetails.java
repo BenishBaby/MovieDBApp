@@ -39,7 +39,7 @@ public class MovieDetails
 
     @Expose
     @SerializedName("belongs_to_collection")
-    private String belongs_to_collection;
+    private Belongs_to_collection  belongs_to_collection = null;
 
     private String imdb_id;
 
@@ -209,12 +209,12 @@ public class MovieDetails
         this.production_companies = production_companies;
     }
 
-    public String getBelongs_to_collection ()
+    public Belongs_to_collection getBelongs_to_collection ()
     {
         return belongs_to_collection;
     }
 
-    public void setBelongs_to_collection (String belongs_to_collection)
+    public void setBelongs_to_collection (Belongs_to_collection belongs_to_collection)
     {
         this.belongs_to_collection = belongs_to_collection;
     }
